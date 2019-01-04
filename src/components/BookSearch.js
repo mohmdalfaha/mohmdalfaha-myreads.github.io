@@ -25,7 +25,9 @@ handleQuery = (event) => {
         const query = event.target.value
         if (query !== '') {
           BooksAPI.search(query).then(searchResults => {
+            if (!searchResults || searchResults.error) {
               this.setState({ searchedBooks: [] })
+            }
             const mergingBooks = searchResults.map(searchResult => {
                 this.props.books.forEach(book => {
                 if (book.id === searchResult.id) searchResult.shelf = book.shelf
