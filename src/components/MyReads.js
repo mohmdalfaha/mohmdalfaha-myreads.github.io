@@ -15,17 +15,17 @@ class MyReads extends Component{
              <Shelves 
                       books={this.props.books.filter(book => book.shelf ==='currentlyReading')}
                       shelfTitle={'Currently Reading'} 
-                       moveToShelf={this.moveToShelf}/>
+                       moveToShelf={this.props.moveToShelf}/>
 
               <Shelves 
                       books={this.props.books.filter(book => book.shelf ==='wantToRead')}
                       shelfTitle={'Want To Read'}
-                      moveToShelf={this.moveToShelf}/>
+                      moveToShelf={this.props.moveToShelf}/>
 
               <Shelves 
                       books={this.props.books.filter(book => book.shelf ==='read')}
                       shelfTitle={'Read'}
-                      moveToShelf={this.moveToShelf}/>
+                      moveToShelf={this.props.moveToShelf}/>
       </div>
           </div>
       <div className="open-search">
