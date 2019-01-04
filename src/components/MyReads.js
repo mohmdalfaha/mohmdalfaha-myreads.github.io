@@ -1,9 +1,14 @@
 import React,{ Component } from 'react'
+import PropTypes from 'prop-types'
 import Shelves from './Shelves'
 import { Link } from 'react-router-dom'
 
 
 class MyReads extends Component{
+  static ProbTypes ={
+      books: PropTypes.array.isRequired,
+      moveToShelf: PropTypes.func.isRequired,
+    }
   render(){
     return(
       <div className="list-books">
