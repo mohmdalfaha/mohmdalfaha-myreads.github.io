@@ -7,7 +7,7 @@ import Shelves from './Shelves'
 
 
 class BookSearch extends Component{
-   static ProbTypes ={
+   static PropTypes ={
       books: PropTypes.array.isRequired,
       searchResult: PropTypes.array.isRequired,
       moveToShelf: PropTypes.func.isRequired,
@@ -18,14 +18,14 @@ class BookSearch extends Component{
       }
 
 componentDidMount(){
-    this.setState({ searchResult:[] })
+    this.setState({ searchResult: []})
 }
 
 handleQuery = (event) => {
         const query = event.target.value
         if (query !== '') {
           BooksAPI.search(query).then(searchResults => {
-              this.setState({ searchResult: [] })
+              this.setState({ searchedBooks: [] })
             const mergingBooks = searchResults.map(searchResult => {
                 this.props.books.forEach(book => {
                 if (book.id === searchResult.id) searchResult.shelf = book.shelf

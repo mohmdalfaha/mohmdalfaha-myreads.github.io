@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 class MyReads extends Component{
-  static ProbTypes ={
+  static PropTypes ={
       books: PropTypes.array.isRequired,
       moveToShelf: PropTypes.func.isRequired,
     }
@@ -32,7 +32,7 @@ class MyReads extends Component{
                       shelfTitle={'Read'}
                       moveToShelf={this.props.moveToShelf}/>
       </div>
-          </div>
+     </div>
       <div className="open-search">
           <Link
             to='/add'

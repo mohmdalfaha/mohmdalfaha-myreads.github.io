@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 
 class Shelves extends Component{
-    static ProbTypes ={
+    static PropTypes ={
       books: PropTypes.array.isRequired,
       moveToShelf: PropTypes.func.isRequired,
     }
@@ -29,21 +29,21 @@ class Shelves extends Component{
                                }}
                           ></div>
                           <div className="book-shelf-changer">
-                          <select value={book.shelf}
-                            onChange={(event) => this.props.moveToShelf(book, event.target.value)}>
-                            <option value="move" disabled>Move to...</option>
-                            <option value="none">None</option>
-                            <option value="currentlyReading">Currently Reading</option>
-                            <option value="wantToRead">Want to Read</option>
-                            <option value="read">Read</option>
-                          </select>
-                        </div>
+                              <select value={book.shelf}
+                                onChange={(event) => this.props.moveToShelf(book, event.target.value)}>
+                                <option value="move" disabled>Move to...</option>
+                                <option value="none">None</option>
+                                <option value="currentlyReading">Currently Reading</option>
+                                <option value="wantToRead">Want to Read</option>
+                                <option value="read">Read</option>
+                              </select>
+                      	  </div>
                       </div>
                       <div className="book-title">{book.title}</div>
                       <div className="book-authors">{book.authors}</div>
                     </div>
                   </li>
-))}
+					))}
                     </ol>
                   </div>
                 </div>
