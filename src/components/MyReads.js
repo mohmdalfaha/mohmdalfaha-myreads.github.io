@@ -11,9 +11,11 @@ class MyReads extends Component{
       		<h1>MyReads</h1>
                </div>
       <div className="list-books-content">
-        <div>
-         <Shelves/>
-          </div>
+       <div>
+             <Shelves books={this.props.books}/>
+              <Shelves books={this.props.books}/>
+              <Shelves books={this.props.books}/>
+      </div>
           </div>
       <div className="open-search">
           <Link
