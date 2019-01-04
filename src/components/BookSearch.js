@@ -1,6 +1,7 @@
 import React,{ Component } from 'react'
 import { Link } from 'react-router-dom'
 import * as BooksAPI from '../BooksAPI'
+import Shelves from './Shelves'
 
 
 class BookSearch extends Component{
@@ -58,7 +59,11 @@ handleQuery = (event) => {
               </div>
             </div>
             <div className="search-books-results">
-              <ol className="books-grid"></ol>
+               <Shelves
+                                moveToShelf={this.props.moveToShelf}
+                                shelfTitle="Search Results"
+                                books={this.state.searchResult} />
+
             </div>
           </div>
       
