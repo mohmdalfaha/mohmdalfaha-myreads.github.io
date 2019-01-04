@@ -13,6 +13,9 @@ class Shelves extends Component{
                   <h2 className="bookshelf-title">{this.props.shelfTitle}</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
+    					 {this.props.books.length === 0 &&(
+                          <h4>No Books Found 😕</h4>
+                          )}
                         {(this.props.books) && (
                      this.props.books.map((book, id) =>
                     <li key={id}>

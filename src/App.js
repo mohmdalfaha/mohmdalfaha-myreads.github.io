@@ -19,12 +19,11 @@ class BooksApp extends Component {
 componentDidMount() {
     BooksAPI.getAll().then((books) => {
       this.setState({ books })
-      console.log(books);
+      //console.log(books);
     })
 }
 
  moveToShelf = (book, shelf) => {
-
       if (book.shelf !== shelf) {
             BooksAPI.update(book, shelf).then(() => {
                 const { books } = this.state
