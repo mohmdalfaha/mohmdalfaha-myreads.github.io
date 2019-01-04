@@ -52,6 +52,7 @@ componentDidMount() {
 		<Route path='/add' render={()=>(
          <BookSearch 
           books={this.state.books}
+		  moveToShelf={this.moveToShelf}
           /> 
         )}/>
 
