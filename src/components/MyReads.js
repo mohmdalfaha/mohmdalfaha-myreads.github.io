@@ -12,9 +12,20 @@ class MyReads extends Component{
                </div>
       <div className="list-books-content">
        <div>
-             <Shelves books={this.props.books} shelfTitle={'Currently Reading'}/>
-              <Shelves books={this.props.books} shelfTitle={'Want To Read'}/>
-              <Shelves books={this.props.books} shelfTitle={'Read'}/>
+             <Shelves 
+                      books={this.props.books} 
+                      shelfTitle={'Currently Reading'} 
+                       moveToShelf={this.moveToShelf}/>
+
+              <Shelves 
+                      books={this.props.books} 
+                      shelfTitle={'Want To Read'}
+                      moveToShelf={this.moveToShelf}/>
+
+              <Shelves 
+                      books={this.props.books} 
+                      shelfTitle={'Read'}
+                      moveToShelf={this.moveToShelf}/>
       </div>
           </div>
       <div className="open-search">

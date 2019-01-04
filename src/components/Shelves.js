@@ -22,7 +22,7 @@ class Shelves extends Component{
                           ></div>
                           <div className="book-shelf-changer">
                           <select value={book.shelf}
-                            onChange={(event) => this.props.updateShelf(book, event.target.value)}>
+                            onChange={(event) => this.props.moveToShelf(book, event.target.value)}>
                             <option value="move" disabled>Move to...</option>
                             <option value="none">None</option>
                             <option value="currentlyReading">Currently Reading</option>
