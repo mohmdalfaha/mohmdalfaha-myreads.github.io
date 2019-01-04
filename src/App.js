@@ -50,7 +50,9 @@ componentDidMount() {
 
     	)}/>
 		<Route path='/add' render={()=>(
-         <BookSearch /> 
+         <BookSearch 
+          books={this.state.books}
+          /> 
         )}/>
 
          
