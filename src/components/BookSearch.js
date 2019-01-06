@@ -18,10 +18,6 @@ class BookSearch extends Component{
         searchResult:[],
       }
 
-componentDidMount(){
-    this.setState({ searchResult: []})
-}
-
 handleQuery = (event) => {
         const query = event.target.value
         if (query !== '') {
@@ -53,7 +49,7 @@ handleQuery = (event) => {
                
                 <DebounceInput
                         type="text"
-                    	debounceTimeout={400}
+                    	debounceTimeout={600}
                         value={this.props.books.string}
                         onChange={this.handleQuery}
                         placeholder="Search by title or author"
