@@ -8,9 +8,11 @@ function Shelves(props) {
                   <h2 className="bookshelf-title">{props.shelfTitle}</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
-    					 {props.books.length === 0 &&(
-                          <h4>No Books Found 😕</h4>
-                          )}
+    					 {props.books.length === 0 && (
+                          <span role="img" aria-label="emoji">
+                            😕 No Books Found 😕
+                          </span>
+                        )}
                         {(props.books) && (
                      props.books.map((book, id) =>
                     <li key={id}>
