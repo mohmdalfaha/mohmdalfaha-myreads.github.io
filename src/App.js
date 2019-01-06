@@ -29,12 +29,16 @@ componentDidMount() {
                     this.setState(currentState => ({
                             books: currentState.books.filter(b => b.id !== book.id)
                         })))
-                if (booksIds.includes(book.id) ) {
-                    newBooks = books.map(b => b.id === book.id ? { ...b, shelf } : b)
-                } else {
-                    book.shelf = shelf
-                    newBooks = [...books, book]
-                }
+                if (booksIds.includes(book.id)) {
+                    this.setState(currentState => {
+                      newBooks = books.map(b => (b.id === book.id ? { ...b, shelf } : b));
+                    });
+                  } else {
+                    this.setState(currentState => {
+                      book.shelf = shelf;
+                      newBooks = [...books, book];
+          });
+        }
                 this.setState({ books: newBooks})
             })
         }
