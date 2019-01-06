@@ -1,4 +1,4 @@
-# MyReads Project
+# MyReads Udacity React Project
 
 This web app lets you categorize books into three shelves 
 1-Currently Reading.
