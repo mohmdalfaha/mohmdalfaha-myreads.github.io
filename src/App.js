@@ -1,10 +1,22 @@
 import React,{ Component } from 'react'
-import { Route } from 'react-router-dom'
+import { BrowserRouter as Router,
+        Route,
+        Switch  } from 'react-router-dom'
 
 import * as BooksAPI from './BooksAPI'
 import BookSearch from './components/BookSearch'
 import MyReads from './components/MyReads'
 import './App.css'
+
+const NoMatch = ({ location }) => (
+  <div>
+    <span role="img" aria-label="emoji">
+      😕 No Match !! 😕 for
+      <br />
+      <code>{location.pathname}</code>
+    </span>
+  </div>
+);
 
 class BooksApp extends Component {
    
@@ -47,7 +59,9 @@ componentDidMount() {
 
   render() {
     return (
+    <Router>
       <div className="app">
+       <Switch>
        <Route exact path='/' render={() =>(
     	<MyReads 
                 moveToShelf={this.moveToShelf}
@@ -58,13 +72,14 @@ componentDidMount() {
          <BookSearch 
           books={this.state.books}
 		  moveToShelf={this.moveToShelf}
-          /> 
-        )}/>
+          /> )}/>
 
-         
-        
-         
+			<Route
+			 component={NoMatch}/>
+         </Switch>
        </div>
+     </Router>
+     
     )
   }
 }
