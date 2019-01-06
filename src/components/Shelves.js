@@ -1,23 +1,18 @@
-import React,{ Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 
-class Shelves extends Component{
-    static PropTypes ={
-      books: PropTypes.array.isRequired,
-      moveToShelf: PropTypes.func.isRequired,
-    }
-  render(){
+function Shelves(props) {
     return(
                 <div className="bookshelf">
-                  <h2 className="bookshelf-title">{this.props.shelfTitle}</h2>
+                  <h2 className="bookshelf-title">{props.shelfTitle}</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
-    					 {this.props.books.length === 0 &&(
+    					 {props.books.length === 0 &&(
                           <h4>No Books Found 😕</h4>
                           )}
-                        {(this.props.books) && (
-                     this.props.books.map((book, id) =>
+                        {(props.books) && (
+                     props.books.map((book, id) =>
                     <li key={id}>
                     <div className="book">
                       <div className="book-top">
@@ -32,7 +27,7 @@ class Shelves extends Component{
                           ></div>
                           <div className="book-shelf-changer">
                               <select value={book.shelf}
-                                onChange={(event) => this.props.moveToShelf(book, event.target.value)}>
+                                onChange={(event) => props.moveToShelf(book, event.target.value)}>
                                 <option value="move" disabled>Move to...</option>
                                 <option value="none">None</option>
                                 <option value="currentlyReading">Currently Reading</option>
@@ -55,7 +50,11 @@ class Shelves extends Component{
 
       )
   }
-}
+
+Shelves.PropTypes ={
+      books: PropTypes.array.isRequired,
+      moveToShelf: PropTypes.func.isRequired,
+    }
 export default Shelves
 
 
