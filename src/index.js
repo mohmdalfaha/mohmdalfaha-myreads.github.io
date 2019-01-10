@@ -5,8 +5,8 @@ import BooksApp from "./App.js";
 import "./index.css";
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
     <BooksApp />
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById("root")
 );
